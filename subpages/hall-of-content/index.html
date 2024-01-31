@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>47lion - name</title>
+  <link rel="icon" type="image/x-icon" href="/media/favicon.png">
+	<link href="/subpages/47lion/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body align='center'>
+	<div class="big-container">
+		<div class="small-container">
+			<div class="content" id="content">
+				<h1>whow</h1>
+				<p>holy guacamole!! (this place is so broken but i dont even care-)</p>
+				<a href="/">
+					<button>homepage</button>
+				</a>
+				<br>
+				
+				<h2>watch thsi cool roblxo gmapelay</h2>
+				<video controls>
+					<source src="/media/vidjeos/roblos.mp4" type="video/mp4">
+				</video>
+				
+				<br>
+
+				<h2>harmahnicuh cuh!!</h2>
+				<video controls>
+					<source src="/media/vidjeos/So_cool_harmainca.mp4" type="video/mp4">
+				</video>
+
+				<!-- Dont add vidjeo here add from javaerscrapt -->
+
+				
+			</div>
+		</div>
+	</div>
+
+	<script>
+		let vidjeos = [
+			{
+				src: "rar_terraria_underground",
+				name: "Rar under da ground",
+				//ext: "mp4", /* - optional */
+				//type: "video/mp4", /* - optional */
+			},
+			{
+				src: "rar_electroman_adventures",
+				name: "Rar electric adventur"
+			},
+			{
+				src: "rar_electric_zoo",
+				name: "Rar sponge robo danc"
+			},
+			{
+				src: "rar_palm_tree_panic",
+				name: "Rar snactic palm tree"
+			},
+			{
+				src: "rar_jetpack_joyride",
+				name: "Rar jetpack"
+			},
+			{
+				src: "rar_wrong_enemy",
+				name: "Wrong rar"
+			},
+			/* You know how to add from here right? */
+		];
+
+		let vidjeoCount = 0
+
+		var wrapper = document.getElementById('content');
+
+		function scrollCheck() {
+				const difference = wrapper.scrollHeight - window.innerHeight;
+				const scrollposition = wrapper.scrollTop; 
+				if (difference - scrollposition <= 2) {
+						if(vidjeoCount < vidjeos.length) {
+							
+							const h2 = document.createElement('h2');
+							h2.innerHTML = vidjeos[vidjeoCount].name;
+							
+							const video = document.createElement('video');
+							video.controls = true;
+							video.src = `/media/vidjeos/${vidjeos[vidjeoCount].src}.${vidjeos[vidjeoCount].ext || "mp4"}`;
+							video.type = vidjeos[vidjeoCount].type || "video/mp4";
+
+							video.height = (window.innerHeight / 100) * 40
+							video.style.zIndex = 999;
+							wrapper.appendChild(document.createElement('br'))
+							wrapper.appendChild(h2);
+							wrapper.appendChild(video);
+
+							vidjeoCount++;
+						};
+				}   
+		}
+
+		wrapper.addEventListener('scroll', scrollCheck);
+		
+		//Get all videos and set them to 40% of screen size
+		function resize() {
+			let videos = document.querySelectorAll('video');
+			let height = window.innerHeight;
+			videos.forEach(video => {
+				video.height = (height / 100) * 40;
+			})
+		}
+		resize()
+		window.addEventListener("resize", resize)
+
+		//set all videos z-index
+			document.querySelectorAll('video').forEach(vid=>{
+				vid.style.zIndex = 999;
+			})
+	</script>
+</body>
+
+</html>

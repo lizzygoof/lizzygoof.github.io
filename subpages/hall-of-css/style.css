@@ -1,0 +1,55 @@
+@keyframes bgcolor {
+    0% {
+        background-color: #f35
+    }
+
+    30% {
+        background-color: #eb670f
+    }
+
+    60% {
+        background-color: #66bf39
+    }
+
+    90% {
+        background-color: #45a3e5
+    }
+
+    100% {
+        background-color: #864cbf
+    }
+}
+
+body {
+    -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+  top: 10%;
+}
+h1 {
+  color: white;
+  text-shadow: 0px 0px 4px #000;
+  font-family: "Impact"
+}
+.button1 {
+  background-color: #e1ff00;
+  width: 100px;
+  height: 50px;
+  position: relative;
+  font-family: "Impact";
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+.button1:hover {
+  width: 120px;
+  height: 70px;
+}
+.button2 {
+  background-color: #8bff4d;
+  border-radius: 15px 50px 30px 5px;
+  font-family: "Courier New";
+  box-shadow: 0px 0px 5px #000;
+  color: white;
+  text-shadow: 0px 0px 2px black;
+}
